@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Network latency demo</title>
+</head>
+<body>
+  <network-latency></network-latency>
+  <button>Change config</button>
+  <script type="module">
+    import checkConnectivity from '/src/index.js';
+    import '/src/network-latency.js';
+    // checkConnectivity();
+
+    document.querySelector('button').addEventListener('click', () => {
+      // document.querySelector('network-latency').setAttribute('interval', 3000);
+      // document.querySelector('network-latency').interval = 3000;
+    });
+  </script>
+</body>
+</html>
