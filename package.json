@@ -1,6 +1,6 @@
 {
   "name": "network-latency",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A small library to check network latency",
   "module": "./src/index.js",
   "main": "./src/index.js",
