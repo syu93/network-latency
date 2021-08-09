@@ -1,6 +1,6 @@
 # network-latency
 
-A very small library to check network latency and dispatch event when it cross a threshold
+A very small library to check network latency and dispatch event when it cross a threshold.
 
 ## Install
 
@@ -21,10 +21,10 @@ import checkConnectivity from 'network-latency';
 
 // Call the checkConnectivity method
 checkConnectivity({
-  url = 'https://www.google.com/images/phd/px.gif',
-  timeToCount = 3,
-  threshold = 2000,
-  interval = 30000 
+  url: 'https://www.google.com/images/phd/px.gif',
+  timeToCount: 3,
+  threshold: 2000,
+  interval: 30000 
 });
 
 // Add an event listener to listen on the 'connection-changed' event
