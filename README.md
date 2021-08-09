@@ -1,4 +1,4 @@
-# network-latency
+# network-latency [![npm version](https://badgen.net/npm/v/network-latency)](https://www.npmjs.com/package/network-latency) [![bundle size](https://badgen.net/bundlephobia/minzip/network-latency)](https://bundlephobia.com/package/network-latency)
 
 A very small library to check network latency and dispatch event when it cross a threshold.
 
