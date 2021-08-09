@@ -1,0 +1,143 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "README.md",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/network-latency.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "NetworkLatency",
+          "members": [
+            {
+              "kind": "field",
+              "name": "url"
+            },
+            {
+              "kind": "field",
+              "name": "timeToCount"
+            },
+            {
+              "kind": "field",
+              "name": "threshold"
+            },
+            {
+              "kind": "field",
+              "name": "interval"
+            },
+            {
+              "kind": "method",
+              "name": "_debounce",
+              "parameters": [
+                {
+                  "name": "func"
+                },
+                {
+                  "name": "timeout",
+                  "default": "300"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_getConfig"
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML",
+              "default": "`<style>:host { display: block; }</style><div class=\".network-message\" hidden><slot>Connectivity is to slow, falling back to offline mode</slot></div>`"
+            },
+            {
+              "kind": "field",
+              "name": "_url",
+              "type": {
+                "text": "null"
+              },
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "_timeToCount",
+              "type": {
+                "text": "null"
+              },
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "_threshold",
+              "type": {
+                "text": "null"
+              },
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "_interval",
+              "type": {
+                "text": "null"
+              },
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "_connectionStateFlag",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "_properties",
+              "type": {
+                "text": "object"
+              },
+              "default": "{\n      'url': String,\n      'timeToCount': Number,\n      'threshold': Number,\n      'interval': Number,\n    }"
+            },
+            {
+              "kind": "field",
+              "name": "__abortCheckConnectivity",
+              "default": "() => {}"
+            },
+            {
+              "kind": "field",
+              "name": "startCheckConnectivity"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "url"
+            },
+            {
+              "name": "timeToCount"
+            },
+            {
+              "name": "threshold"
+            },
+            {
+              "name": "interval"
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "network-latency",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "network-latency",
+          "declaration": {
+            "name": "NetworkLatency",
+            "module": "src/network-latency.js"
+          }
+        }
+      ]
+    }
+  ]
+}

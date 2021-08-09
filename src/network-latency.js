@@ -13,12 +13,30 @@ class NetworkLatency extends HTMLElement {
     this._threshold = null;
     this._interval = null;
 
+    this._connectionStateFlag = true;
+
     this._properties = {
       'url': String,
       'timeToCount': Number,
       'threshold': Number,
       'interval': Number,
     };
+
+    document.addEventListener('connection-changed', ({ detail }) => {
+      const connectionChange = this._connectionStateFlag !== detail;
+
+      if (!connectionChange) return;
+
+      if (detail) {
+        const event = new CustomEvent('online-mode');
+        this.dispatchEvent(event, { detail });
+      } else {
+        const event = new CustomEvent('offline-mode');
+        this.dispatchEvent(event, { detail });
+      }
+
+      this._connectionStateFlag = detail;
+    });
 
     this.__abortCheckConnectivity = () => {};
     this.startCheckConnectivity = this._debounce(() => {
