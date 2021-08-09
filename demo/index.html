@@ -18,6 +18,9 @@
       // document.querySelector('network-latency').setAttribute('interval', 3000);
       // document.querySelector('network-latency').interval = 3000;
     });
+
+    document.querySelector('network-latency').addEventListener('online-mode', () => console.log('online-mode'));
+    document.querySelector('network-latency').addEventListener('offline-mode', () => console.log('offline-mode'));
   </script>
 </body>
 </html>
