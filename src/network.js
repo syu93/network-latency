@@ -20,6 +20,8 @@ let abortFallback = false;
 let counter = 0;
 let responseTimeArray = [];
 
+const NO_RESPONSE_TIME = 100000;
+
 /**
  * Check connectivity latency by loading an image as a ping HTTP request against provided URL
  * 
@@ -58,7 +60,6 @@ export default function checkConnectivity({ url = 'https://www.google.com/images
   }, interval);
 
   return function AbortCheckConnectivity() {
-    console.log(intervalRef);
     clearInterval(intervalRef);
     reset();
   }
@@ -103,8 +104,13 @@ function checkLatency(url, timeToCount, cb) {
       counter++;
       checkLatency(url, timeToCount, cb);
     }
+    image.onerror = function erroPingResult() {
+      abortFallback = true;
+      responseTimeArray.push(NO_RESPONSE_TIME);
+      counter++;
+      checkLatency(url, timeToCount, cb);
+    }
   } else {
-    console.log('checkConnectivity');
     const sum = responseTimeArray.reduce((a, b) => a + b);
     const avg = sum / responseTimeArray.length;
     cb(avg);
